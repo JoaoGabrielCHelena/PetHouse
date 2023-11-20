@@ -19,14 +19,13 @@ h2 {
 
 .hero {
     margin-top: 0;
-    height: 450px;
 }
 
 .horarios {
     padding: var(--page-margin);
 }
 
-.horarios > div{
+.horarios > div {
     background: var(--lighter-blue);
     display: flex;
     justify-content: space-between;
