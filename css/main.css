@@ -48,10 +48,18 @@ header div{
     text-decoration: none;
 }
 
+.contato:hover {
+    text-decoration: none;
+}
+
 .whatsapp {
     position: fixed;
     right: -100px;
     bottom: 0;
+}
+
+h1, h2 {
+    scroll-margin-top: 4rem;
 }
 
 /* navbar */
@@ -129,6 +137,10 @@ footer {
     background: var(--lighter-blue);
 }
 
+.contatos {
+    height: min-content;
+}
+
 .contatos div, .contatos a {
     margin-bottom: 15px;
     display: flex;
@@ -177,11 +189,11 @@ a:hover {
     text-decoration: underline;
 }
 
-a svg, a img {
+a svg, a img, .contato {
     transform-origin: center;
     transition: 200ms;
 }
 
-a:hover svg, a:hover img {
+a:hover svg, a:hover img, .contato:hover {
     transform: scale(110%);
 }

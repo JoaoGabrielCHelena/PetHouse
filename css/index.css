@@ -141,6 +141,8 @@ h2 {
 .depoimentos {
     display: grid;
     margin: var(--page-margin);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     grid-template-columns: repeat(12, 1fr);
     gap: 24px;
     position: relative;
