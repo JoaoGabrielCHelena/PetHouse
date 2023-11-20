@@ -1,0 +1,187 @@
+:root {
+    --page-margin: 0 168px;
+    --border-radius: 23px;
+    --darker-blue: #00A9F1;
+    --lighter-blue: #E2F6F8;
+    --page-bg: #FFFAFA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--page-bg);
+    overflow-x: hidden;
+    font-family: 'Istok Web', sans-serif;
+}
+
+header {
+    padding: var(--page-margin);
+    display: flex;
+    justify-content: space-between;  
+}
+
+header div{
+    display: flex;  
+    gap: 55px;
+    align-items: center;
+}
+
+.logo {
+    max-height: 100px;
+    padding: .5rem 0;
+}
+
+.contato {
+    font-size: 25px;
+    padding: 8px 39px;
+    border-radius: calc(var(--border-radius) / 2);
+    background: var(--darker-blue);
+    color: white;
+    text-decoration: none;
+}
+
+.whatsapp {
+    position: fixed;
+    right: -100px;
+    bottom: 0;
+}
+
+/* navbar */
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+    background: var(--darker-blue);
+    font-size: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 5px 0;
+}
+
+nav div {
+    display: flex;
+    position: relative;
+}
+
+nav ul {
+    visibility: hidden;
+    position: absolute;
+    pointer-events: visible;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 150%;
+    border-radius: var(--border-radius);
+    padding: 0 1rem;
+    list-style-type: none;
+    text-align: center;
+    width: 200px;
+    transition: 500ms;
+}
+
+nav li {
+    margin: 10px 5px 0 ;
+    padding: 0 0 10px 0;
+    opacity: 0;
+    transition: 500ms;
+}
+
+nav ul > :not(li:last-child) {
+    border-bottom: 1px solid #D9D9D9;
+}
+
+nav ul a {
+    color: #000;
+}
+
+nav div:hover li, nav ul:hover li {
+    opacity: 1;
+}
+
+nav div:hover ul, nav ul:hover {
+    pointer-events: all;
+    visibility: visible;
+    background: var(--page-bg);
+}
+
+/* footer */
+footer {
+    padding: var(--page-margin);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    background: var(--lighter-blue);
+}
+
+.contatos div, .contatos a {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    text-decoration: none;
+    color: #000;
+}
+
+.contatos p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.footernav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+}
+
+.footernav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+.footerinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 18px;
+}
+
+.footerinfo > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a svg, a img {
+    transform-origin: center;
+    transition: 200ms;
+}
+
+a:hover svg, a:hover img {
+    transform: scale(110%);
+}

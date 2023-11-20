@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Leckerli+One&display=swap" rel="stylesheet">
+
+    <script defer src="js/bootstrap.min.js">
+        const carousel1 = document.querySelector('#carouselH')
+        const carousel2 = document.querySelector('#carouselD')
+
+        const carousel = new bootstrap.Carousel(carousel1, {
+            interval: 2000
+        })
+        const carouse2 = new bootstrap.Carousel(carousel2, {
+            interval: 2000
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="#">
+            <img class="logo" src="../assets/icons/Logo.svg" alt="Pet House">
+        </a>
+        <div>
+            <a href="milto:placeholder@email.com">
+                <svg width="42" height="40">
+                    <use href="assets/icons/Email.svg#email"></use>
+                </svg>
+            </a>
+            <a href="">
+                <svg width="42" height="40">
+                    <use href="assets/icons/Instagram.svg#insta"></use>
+                </svg>
+            </a>
+            <a href="#contatos" class="contato">Contato</a>
+        </div>
+    </header>
+    <main>
+        <a href="#" class="whatsapp">
+            <svg>
+                <use href="assets/icons/whatsapp.svg#whatsapp"></use>
+            </svg>
+        </a>
+        <nav>
+            <a href="#sobrenos">Sobre Nós</a>
+            <div class="dropdown">
+                <a href="#servicos">Serviços</a>
+                <ul>
+                    <li><a href="pages/vacinas.html">Vacinas</a></li>
+                    <li><a href="pages/exames.html">Exames</a></li>
+                    <li><a href="pages/internacao.html">Internações</a></li>
+                    <li><a href="pages/cirurgia.html">Cirurgias</a></li>
+                </ul>
+            </div>
+            <a href="#depoimentos">Depoimentos</a>
+        </nav>
+        <section class="hero">
+            <div id="carouselH" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/banner1.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/banner2.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/banner3.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselH" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselH" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+        </section>
+        <section class="horarios">
+            <h2>Nossos Horários</h2>
+            <div>
+                <div>
+                    <p>Segunda à Sexta</p>
+                    <p>13:30 às 17:00</p>
+                </div>
+                <div>
+                    <p>Sábado</p>
+                    <p>13:30 às 16:00</p>
+                </div>
+                <div>
+                    <p>Domingo</p>
+                    <p>13:00 às 15:00</p>
+                </div>
+            </div>
+        </section>
+        <section class="servicos">
+            <h2 id="servicos">Serviços</h2>
+            <div>
+                <a href="pages/vacinas.html">
+                    <img src="assets/img/vacinas.png" alt="">
+                    <p>Vacinas</p>
+                </a>
+                <a href="pages/exames.html">
+                    <img src="assets/img/exames.png" alt="">
+                    <p>Exames</p>
+                </a>
+                <a href="pages/internacao.html">
+                    <img src="assets/img/internacoes.png" alt="">
+                    <p>Internações</p>
+                </a>
+                <a href="pages/cirurgia.html">
+                    <img src="assets/img/cirurgia.png" alt="">
+                    <p>Cirurgias</p>
+                </a>
+            </div>
+        </section>
+        <section class="specialbg">
+            <img src="assets/img/gatito.png" alt="">
+            <div class="offsetbg"></div>
+            <div class="sobrenos">
+                <h2 id="sobrenos">A melhor casa para seu pet. Depois da sua.</h2>
+                <p>Na Pet House, não apenas cuidamos de animais de estimação; nutrimos laços, construímos
+                    relacionamentos e compartilhamos a alegria de viver com nossos amigos peludos. </p>
+                <p>Ao escolher nossos serviços, você não apenas cuida do seu animal de estimação, mas também se junta a
+                    uma comunidade que compartilha seu amor e compromisso com a saúde e o bem-estar dos animais.</p>
+                <p>Nossa jornada é guiada e impulsionada pelas crenças que sustentam nossas ações. Se você compartilha
+                    essa paixão, convidamos você a fazer parte de nossa missão.</p>
+            </div>
+            <h2>Nossos valores</h2>
+            <div class="valores">
+                <div>
+                    <img src="assets/img/exelc.png" alt="">
+                    <p>Excelência</p>
+                </div>
+                <div>
+                    <img src="assets/img/etic.png" alt="">
+                    <p>Ética</p>
+                </div>
+                <div>
+                    <img src="assets/img/prof.png" alt="">
+                    <p>Profissionalismo</p>
+                </div>
+                <div>
+                    <img src="assets/img/amor.png" alt="">
+                    <p>Amor</p>
+                </div>
+            </div>
+
+        </section>
+        <section class="depoimentos">
+            <img src="assets/img/dep.png" alt="">
+            <div class="carossel">
+                <h2 id="depoimentos">Depoimentos</h2>
+                <div id="carouselD" class="carousel slide">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselD"
+                        data-bs-slide="prev">
+                        <svg width="47" height="45">
+                            <use href="assets/icons/ArrowLeftCircle.svg#arrow"></use>
+                        </svg>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <p clas class="name">Mônica Pereira</p>
+                            <p>"Excelente atendimento e profissionais. Tive um excelente atendimento e suporte com todos
+                                os profissionais da
+                                clinica. Recomendo muito."</p>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="name">Sara Santana</p>
+                            <p>"Profissionais altamente qualificados. Nitidamente expressão o carinho com os nossos
+                                animais; São sempre muito solícito e atencioso com todos."</p>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="name">William Gonçalves</p>
+                            <p>"Excelentes profissionais, espaço acolhedor, preços bons. Além disso, tratam os filhotes
+                                felinos e caninos como seus amigos, com carinho e respeito."</p>
+                        </div>
+                    </div>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselD"
+                        data-bs-slide="next">
+                        <svg width="47" height="45">
+                            <use href="assets/icons/ArrowRightCircle.svg#arrow"></use>
+                        </svg>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="contatos" id=contatos>
+            <div>
+                <svg width="42" height="40">
+                    <use href="assets/icons/Telephone.svg#telephone"></use>
+                </svg>
+                <p>(48) 2503-3576</p>
+            </div>
+            <div>
+                <svg width="42" height="40">
+                    <use href="assets/icons/Email.svg#email"></use>
+                </svg>
+                <p>PetHouse@vet.com</p>
+            </div>
+            <a href="#">
+                <svg width="42" height="40">
+                    <use href="assets/icons/Instagram.svg#insta"></use>
+                </svg>
+                <p>@PetHouse</p>
+            </a>
+        </div>
+        <div class="footernav">
+            <a href="#sobrenos">Sobre Nós</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#depoimentos">Depoimentos</a>
+        </div>
+        <div class="footerinfo">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3491.6128875728273!2d-49.49724792475971!3d-28.939540780923586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95222f18893e6bf7%3A0x23682c6cd0e157b6!2sR.%20Jorge%20de%20Bem%2C%20105%20-%20Cidade%20Alta%2C%20Ararangu%C3%A1%20-%20SC%2C%2088901-012!5e0!3m2!1spt-BR!2sbr!4v1700410745009!5m2!1spt-BR!2sbr"
+                width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div>
+                <svg width="30" height="30" viewBox="0 0 23 30">
+                    <use href="assets/icons/Pin.svg#pin"></use>
+                </svg>
+                <p>R. Jorge de Bem, 105 - Cidade Alta</p>
+            </div>
+            <div>
+                <svg width="30" height="30">
+                    <use href="assets/icons/Clock.svg#clock"></use>
+                </svg>
+                <div>
+                    <p>Segunda a sexta: 13h30 - 17h</p>
+                    <p>Sábado: 13h30 - 16h</p>
+                    <p>Domingo: 13h - 15h</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
