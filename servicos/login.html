@@ -10,7 +10,7 @@
 
 
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/servicos.css">
+    <link rel="stylesheet" href="../css/login.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,7 @@
                 <use href="../assets/icons/whatsapp.svg#whatsapp"></use>
             </svg>
         </a>
-        <nav>
+        <nav class="menu">
             <a href="../index.html#sobrenos">Sobre Nós</a>
             <div class="dropdown">
                 <a href="../index.html#servicos">Serviços</a>
@@ -57,35 +57,29 @@
             </div>
             <a href="../index.html#depoimentos">Depoimentos</a>
         </nav>
-        <h1>Vacinas</h1>
-        <div>
-            <p>Na Pet House, contamos com um médico veterinário exclusivo para vacinação. Fora do horário comercial
-                também realizamos vacinas no SOS Hospital Veterinário, que fica aberto 24h. Sendo assim, você pode
-                vacinar o seu pet conosco sem agendamento prévio em qualquer horário do dia ou da noite.</p>
-        </div>
-        <section class="picright">
-            <div>
-                <img src="img/vaccao.png" alt="">
-                <h2>Tipos de vacinas e protocolo vacinal para cães</h2>
-                <p>As vacinas são responsáveis por proteger os cães de diversas doenças graves e, em alguns casos,
-                    fatais.</p>
-                <p>Atualmente a única vacina obrigatória é a antirrábica, que deve ser repetida anualmente durante toda
-                    a vida do cão, mas existem inúmeras outras vacinas extremamente importantes e que podem prolongar a
-                    expectativa de vida do seu pet.</p>
-                <p> A mais conhecida delas é a Vacina Polivalente, popularmente conhecida como V8 e V10.</p>
-            </div>
-        </section>
-        <section class="picleft">
-            <div>
-                <img src="img/vacgato.png" alt="">
-                <h2>Tipos de vacinas e protocolo vacinal para gatos</h2>
-                <p>Assim como no caso dos cães, a única vacina obrigatória para os felinos é a que protege contra o
-                    vírus da raiva. </p>
-                <p>A vacina polivalente felina (V3, V4 ou V5) é extremamente importante para proteger os gatos de
-                    doenças como a Panleucopenia, Rinotraqueite, Calicivirose, clamidiose e leucemia felina.</p>
-            </div>
-        </section>
     </main>
+    <section classi="login">
+        <div class="box">
+            <form action="">
+                <fieldset>
+                    <legend><b>Laudos Clientes</b></legend>
+                    <br>
+                    <div class="inputBox">
+                        <input type="text" name="nome" id="nome" class="inputUser" required>
+                        <label for="nome" class="labelInput">Nome completo</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="text" name="senha" id="senha" class="inputUser" required>
+                        <label for="senha" class="labelInput">Senha</label>
+                    </div>
+                    <br><br> 
+                    <input type="submit" name="submit" id="submit">
+                    <br><br>
+                </fieldset>
+            </form>
+        </div>
+    </section>
     <footer>
         <div class="contatos" id=contatos>
             <div>

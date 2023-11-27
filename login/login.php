@@ -1,3 +1,50 @@
+<?php
+    include('config.php');
+
+    if(isset($_POST['cpf']) || isset($_POST['senha'])) {
+    
+        if(strlen($_POST['cpf']) == 0) {
+            echo "Preencha seu CPF";
+        } else if(strlen($_POST['senha']) == 0) {
+            echo "Preencha sua senha";
+        } else {
+    
+            $cpf = $mysqli->real_escape_string($_POST['cpf']);
+            $senha = $mysqli->real_escape_string($_POST['senha']);
+    
+            $sql_code = "SELECT * FROM clientes WHERE cpf = '$cpf' AND senha = '$senha'";
+            $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+            $usuario = $sql_query->fetch_assoc();
+    
+            $quantidade = $sql_query->num_rows;
+    
+            if($quantidade == 1) {
+                
+                $sql_code = "SELECT * FROM resultados WHERE nome_Cliente = '". $usuario['nome_Cliente']. "'";
+                $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+
+                $usuario = $sql_query->fetch_assoc();
+    
+                if(!isset($_SESSION)) {
+                    session_start();
+                }
+
+                $_SESSION['nome_Cliente'] = $usuario['nome_Cliente'];
+                $_SESSION['nome_Pet'] = $usuario['nome_Pet'];
+                $_SESSION['inf_Laudo'] = $usuario['inf_Laudo'];
+    
+                header("Location: laudo.php");
+    
+            } else {
+                echo "Falha ao logar! CPF ou senha incorretos";
+            }
+    
+        }
+    
+    }
+?>
+    
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +52,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet House | Vacinas</title>
+    <title>Pet House | Login</title>
     <link rel="icon" type="image/x-icon" href="../assets/icons/Logo.svg">
 
 
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/servicos.css">
+    <link rel="stylesheet" href="../css/login.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +72,7 @@
             <img class="logo" src="../assets/icons/Logo.svg" alt="Pet House">
         </a>
         <div>
-            <a href="../login/login.php">
+            <a href="login.php">
                 <svg width="42" height="40">
                     <use href="../assets/icons/person.svg#person"></use>
                 </svg>
@@ -44,7 +91,7 @@
                 <use href="../assets/icons/whatsapp.svg#whatsapp"></use>
             </svg>
         </a>
-        <nav>
+        <nav class="menu">
             <a href="../index.html#sobrenos">Sobre Nós</a>
             <div class="dropdown">
                 <a href="../index.html#servicos">Serviços</a>
@@ -57,35 +104,29 @@
             </div>
             <a href="../index.html#depoimentos">Depoimentos</a>
         </nav>
-        <h1>Vacinas</h1>
-        <div>
-            <p>Na Pet House, contamos com um médico veterinário exclusivo para vacinação. Fora do horário comercial
-                também realizamos vacinas no SOS Hospital Veterinário, que fica aberto 24h. Sendo assim, você pode
-                vacinar o seu pet conosco sem agendamento prévio em qualquer horário do dia ou da noite.</p>
-        </div>
-        <section class="picright">
-            <div>
-                <img src="img/vaccao.png" alt="">
-                <h2>Tipos de vacinas e protocolo vacinal para cães</h2>
-                <p>As vacinas são responsáveis por proteger os cães de diversas doenças graves e, em alguns casos,
-                    fatais.</p>
-                <p>Atualmente a única vacina obrigatória é a antirrábica, que deve ser repetida anualmente durante toda
-                    a vida do cão, mas existem inúmeras outras vacinas extremamente importantes e que podem prolongar a
-                    expectativa de vida do seu pet.</p>
-                <p> A mais conhecida delas é a Vacina Polivalente, popularmente conhecida como V8 e V10.</p>
-            </div>
-        </section>
-        <section class="picleft">
-            <div>
-                <img src="img/vacgato.png" alt="">
-                <h2>Tipos de vacinas e protocolo vacinal para gatos</h2>
-                <p>Assim como no caso dos cães, a única vacina obrigatória para os felinos é a que protege contra o
-                    vírus da raiva. </p>
-                <p>A vacina polivalente felina (V3, V4 ou V5) é extremamente importante para proteger os gatos de
-                    doenças como a Panleucopenia, Rinotraqueite, Calicivirose, clamidiose e leucemia felina.</p>
-            </div>
-        </section>
     </main>
+    <section classi="login">
+        <div class="box">
+            <form action="login.php" method="Post">
+                <fieldset>
+                    <legend>Laudos Clientes</legend>
+                    <br>
+                    <div class="inputBox">
+                        <input type="text" name="cpf" id="cpf" class="inputUser" required>
+                        <label for="nome" class="labelInput">CPF</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="password" name="senha" id="senha" class="inputUser" required>
+                        <label for="senha" class="labelInput">Senha</label>
+                    </div>
+                    <br><br> 
+                    <input type="submit" name="submit" id="submit">
+                    <br><br>
+                </fieldset>
+            </form>
+        </div>
+    </section>
     <footer>
         <div class="contatos" id=contatos>
             <div>
