@@ -6,6 +6,8 @@
     --page-bg: #FFFAFA;
 }
 
+/* common */
+
 * {
     margin: 0;
     padding: 0;
@@ -21,6 +23,12 @@ body {
     overflow-x: hidden;
     font-family: 'Istok Web', sans-serif;
 }
+
+h1, h2 {
+    scroll-margin-top: 4rem;
+}
+
+/* header */
 
 header {
     padding: var(--page-margin);
@@ -56,10 +64,6 @@ header div{
     position: fixed;
     right: -100px;
     bottom: 0;
-}
-
-h1, h2 {
-    scroll-margin-top: 4rem;
 }
 
 /* navbar */

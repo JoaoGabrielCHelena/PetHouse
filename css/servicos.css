@@ -6,17 +6,7 @@
     --page-bg: #FFFAFA;
 }
 
-main > div {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-    margin: var(--page-margin);
-}
-
-main > div p {
-    grid-column: 2 / span 10;
-}
-
+/* titles */
 h1 {
     margin-top: 4rem;
     margin-bottom: 2rem;
@@ -33,6 +23,18 @@ h1, h2 {
     text-align: center;
 }
 
+/* styles the intro texts, if existent */
+
+main > div {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin: var(--page-margin);
+}
+
+main > div p {
+    grid-column: 2 / span 10;
+}
 
 section:first-of-type {
     margin-top: 50px !important; 
@@ -43,21 +45,17 @@ section {
     position: relative;
 }
 
-section img {
-    height: 350px;
-    aspect-ratio: 1 / 1;
-}
+/* common stylings for both section types */
 
-.picright {
+.picright, .picleft {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 24px;
     margin: var(--page-margin);
 }
 
-.picright div {
+.picright div, .picleft div {
     grid-auto-rows: min-content;
-    grid-column: 3 / span 9;
     background: var(--lighter-blue);
     border-radius: var(--border-radius);
     display: grid;
@@ -65,68 +63,67 @@ section img {
     padding: 20px 0;
     min-height: 470px;
     position: relative;
+}
+
+.picright h2, .picleft h2 {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.picright p, .picleft p {
+    margin-bottom: 2rem;
+}
+
+.picright img, .picleft img {
+    height: 350px;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    position: absolute;
+    border: 4px solid var(--page-bg);
+}
+
+/* side specific stylings - right */
+
+.picright div {
+    grid-column: 3 / span 9;
 }
 
 .picright h2 {
     grid-column: 3 / span 6;
-    margin-top: 20px;
-    margin-bottom: 50px;
 }
 
 .picright p {
     grid-column: 4 / span 5;
-    margin-bottom: 2rem;
 }
 
 .picright img {
-    border-radius: var(--border-radius);
-    object-fit: cover;
-    position: absolute;
     left: 0;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: 4px solid var(--page-bg);
 }
 
-.picleft {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-    margin: var(--page-margin);
-}
+/* side specific stylings - left */
 
 .picleft div {
-    grid-auto-rows: min-content;
     grid-column: 2 / span 9;
-    background: var(--lighter-blue);
-    border-radius: var(--border-radius);
-    display: grid;
-    grid-template-columns: subgrid;
-    padding: 20px 0;
-    min-height: 470px;
-    position: relative;
 }
 
 .picleft h2 {
     grid-column: 2 / span 6;
-    margin-top: 20px;
-    margin-bottom: 50px;
 }
 
 .picleft p {
     grid-column: 2 / span 5;
-    margin-bottom: 2rem;
 }
 
 .picleft img {
-    border-radius: var(--border-radius);
-    object-fit: cover;
-    position: absolute;
     right: 0;
     top: 50%;
     transform: translate(50%, -50%);
-    border: 4px solid var(--page-bg);
 }
+
+/* stylings for the "lista completa" lists */
 
 main > ul {
     display: flex;
