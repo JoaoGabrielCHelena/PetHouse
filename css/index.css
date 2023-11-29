@@ -174,7 +174,17 @@ h2 {
 .carossel {
     grid-column: 6 / span 6;
     align-self: self-end;
+    position: relative;
     margin-bottom: 1rem;
+}
+
+.carossel::after {
+    content: url("../assets/img/paw.png");
+    position: absolute;
+    bottom: -5%;
+    right: -35%;
+    z-index: -1;
+    transform: scale(60%) rotate(30deg);
 }
 
 .carossel > div {
